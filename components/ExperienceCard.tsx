@@ -40,7 +40,7 @@ const ExperienceCard: React.FC<Props> = ({ data, index }) => {
   };
 
   return (
-    <div className="mb-20 relative pl-8 md:pl-0">
+    <div className="mb-12 md:mb-20 relative pl-8 md:pl-0">
       {/* Connector Line for Mobile */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200 md:hidden" />
       
@@ -102,7 +102,11 @@ const ExperienceCard: React.FC<Props> = ({ data, index }) => {
             <div className="w-16 h-16 shrink-0 bg-white rounded-2xl border border-slate-100 p-2 flex items-center justify-center shadow-sm overflow-hidden group-hover:scale-110 transition-transform duration-500">
               <img 
                 src={data.logo} 
-                alt={`${data.company} logo`} 
+                alt={`${data.company} Logo`} 
+                loading="lazy"
+                decoding="async"
+                width="64"
+                height="64"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${data.company}&background=0F172A&color=fff&size=128&bold=true`;

@@ -30,7 +30,7 @@ const Journey: React.FC = () => {
   };
 
   return (
-    <section className="py-32 bg-[#0B1120] text-white relative overflow-hidden perspective-1000">
+    <section className="py-20 md:py-32 bg-[#0B1120] text-white relative overflow-hidden perspective-1000">
       {/* Background Ambience with more movement */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div 

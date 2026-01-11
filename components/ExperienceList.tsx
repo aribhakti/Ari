@@ -4,7 +4,7 @@ import ExperienceCard from './ExperienceCard';
 
 const ExperienceList: React.FC = () => {
   return (
-    <section id="experience" className="py-24 bg-slate-50/50">
+    <section id="experience" className="py-20 md:py-32 bg-slate-50/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <h2 className="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Career Trajectory</h2>

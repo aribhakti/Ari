@@ -5,7 +5,7 @@ import { EDUCATION } from '../constants';
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="py-24 bg-white relative overflow-hidden">
+    <section id="education" className="py-20 md:py-32 bg-white relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 -skew-x-12 z-0 pointer-events-none" />
 
@@ -69,7 +69,15 @@ const EducationCard: React.FC<{ data: typeof EDUCATION[0]; index: number }> = ({
 
       <div className="flex items-start gap-6 relative z-10">
         <div className="w-20 h-20 shrink-0 bg-slate-50 rounded-2xl p-2 border border-slate-100 group-hover:scale-105 group-hover:border-blue-100 transition-all duration-500">
-          <img src={data.logo} alt={data.institution} className="w-full h-full object-contain" />
+          <img 
+            src={data.logo} 
+            alt={`${data.institution} Logo`} 
+            loading="lazy" 
+            decoding="async"
+            width="80"
+            height="80"
+            className="w-full h-full object-contain" 
+          />
         </div>
         
         <div className="pt-1">

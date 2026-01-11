@@ -35,7 +35,15 @@ const TestimonialCard: React.FC<{ data: typeof TESTIMONIALS[0]; index: number }>
       
       <div className="flex items-center gap-4 mb-6 relative z-10">
         <div className="w-14 h-14 rounded-full overflow-hidden bg-slate-200 border-2 border-white ring-2 ring-slate-100 group-hover:ring-blue-200 transition-all">
-          <img src={data.image} alt={data.name} className="w-full h-full object-cover" />
+          <img 
+            src={data.image} 
+            alt={data.name} 
+            loading="lazy"
+            decoding="async"
+            width="56"
+            height="56"
+            className="w-full h-full object-cover" 
+          />
         </div>
         <div>
           <h4 className="font-bold text-slate-900 text-sm leading-tight group-hover:text-blue-600 transition-colors">{data.name}</h4>
@@ -59,7 +67,7 @@ const TestimonialCard: React.FC<{ data: typeof TESTIMONIALS[0]; index: number }>
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-32 bg-slate-50 relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
        {/* Background Decoration */}
        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
 

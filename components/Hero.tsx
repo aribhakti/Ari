@@ -27,9 +27,16 @@ const Hero: React.FC = () => {
     },
   };
 
+  const handleScrollDown = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20">
-      {/* Dynamic Background Blobs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32">
+      {/* Dynamic Background Blobs - Optimized with will-change-transform */}
       <motion.div 
         animate={{ 
           scale: [1, 1.2, 1],
@@ -38,7 +45,7 @@ const Hero: React.FC = () => {
           y: [0, -50, 0]
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-full blur-[100px] opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none mix-blend-multiply" 
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-200/40 to-indigo-200/40 rounded-full blur-[100px] opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none mix-blend-multiply will-change-transform" 
       />
       <motion.div 
         animate={{ 
@@ -48,7 +55,7 @@ const Hero: React.FC = () => {
           y: [0, 50, 0]
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-200/40 to-blue-200/40 rounded-full blur-[100px] opacity-60 translate-y-1/2 -translate-x-1/3 pointer-events-none mix-blend-multiply" 
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-200/40 to-blue-200/40 rounded-full blur-[100px] opacity-60 translate-y-1/2 -translate-x-1/3 pointer-events-none mix-blend-multiply will-change-transform" 
       />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -60,7 +67,7 @@ const Hero: React.FC = () => {
         >
           
           <motion.div variants={itemVariants} className="mb-8 flex justify-center">
-            <span className="relative px-6 py-2 rounded-full bg-white/50 backdrop-blur-md border border-slate-200/60 text-slate-600 text-sm font-bold tracking-widest uppercase shadow-sm">
+            <span className="relative px-4 py-2 md:px-6 rounded-full bg-white/50 backdrop-blur-md border border-slate-200/60 text-slate-600 text-xs md:text-sm font-bold tracking-widest uppercase shadow-sm">
               <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-sm -z-10"></span>
               14+ Years of FinTech Leadership
             </span>
@@ -68,7 +75,7 @@ const Hero: React.FC = () => {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1] md:leading-[1.1]"
           >
             Building Scalable <br className="hidden md:block" />
             <span className="relative inline-block">
@@ -79,26 +86,26 @@ const Hero: React.FC = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 1, duration: 0.8, ease: "circOut" }}
-                className="absolute bottom-2 left-0 w-full h-3 bg-blue-200/50 -z-0 -skew-x-12 origin-left"
+                className="absolute bottom-2 left-0 w-full h-2 md:h-3 bg-blue-200/50 -z-0 -skew-x-12 origin-left"
               />
             </span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+            className="text-lg md:text-2xl text-slate-600 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed font-light"
           >
-            <span className="font-semibold text-slate-900">Ari Bhakti Subagja</span> is a seasoned Product Executive helping founders and product teams move from idea to production—building clear, user-first products that grow with the business
+            <span className="font-semibold text-slate-900">Ari Bhakti Subagja</span> is a seasoned Product Executive helping founders and product teams move from idea to production—building clear, user-first products that grow with the business.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-5 justify-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center"
           >
             {/* Shimmer Button */}
             <a 
               href="#contact"
-              className="group relative px-10 py-5 bg-slate-900 text-white rounded-xl font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
+              className="group relative px-8 py-4 md:px-10 md:py-5 bg-slate-900 text-white rounded-xl font-semibold text-base md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
             >
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
               <span className="relative flex items-center justify-center gap-2">
@@ -108,7 +115,7 @@ const Hero: React.FC = () => {
             
             <a 
               href="#experience"
-              className="px-10 py-5 bg-white/80 backdrop-blur-sm text-slate-800 border border-slate-200 rounded-xl font-semibold text-lg hover:border-blue-400 hover:bg-white transition-all flex items-center justify-center hover:scale-105"
+              className="px-8 py-4 md:px-10 md:py-5 bg-white/80 backdrop-blur-sm text-slate-800 border border-slate-200 rounded-xl font-semibold text-base md:text-lg hover:border-blue-400 hover:bg-white transition-all flex items-center justify-center hover:scale-105"
             >
               Explore Portfolio
             </a>
@@ -120,13 +127,14 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 cursor-pointer hover:text-blue-600 transition-colors p-2"
+        onClick={handleScrollDown}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-6 h-6" />
+          <ChevronDown className="w-8 h-8" />
         </motion.div>
       </motion.div>
 
